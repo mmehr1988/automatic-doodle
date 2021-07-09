@@ -1,0 +1,191 @@
+/* -------------------------------------------------- */
+/* CSS VARIABLE */
+/* -------------------------------------------------- */
+
+:root {
+  --white: #ffffff;
+  --black: #111;
+  --body-background: #faf1e6;
+
+  --header-text: #5d8233;
+  --date-text: #f5a962;
+
+  --outline-textarea: #444240;
+  --earlier-textarea: #efefef;
+  --current-textarea: #ffeaca;
+  --remaining-textarea: #c9e4c5;
+  --current-timelabel: #334257;
+
+  --icon-current: #ac66cc;
+  --icon-active: #a239ea;
+
+  --quote-text: #a0937d;
+  --quote-author: #9b8764;
+}
+
+/* -------------------------------------------------- */
+/* BASIC SETTINGS */
+/* -------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Suez One', serif;
+  font-size: 16px;
+  color: var(--black);
+  background-color: var(--body-background);
+}
+
+/* -------------------------------------------------- */
+/* HEADERS + PARAGRAPHS */
+/* -------------------------------------------------- */
+
+h1 {
+  color: var(--header-text);
+  margin: 0;
+}
+
+h2 {
+  color: var(--date-text);
+  margin: 10px 0 0 0;
+}
+
+h3 {
+  margin: 10px 0 0 0;
+  font-size: 100%;
+}
+
+/* -------------------------------------------------- */
+/* HEADER ------------------------------------------------------------------------ */
+/* -------------------------------------------------- */
+
+header {
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* -------------------------------------------------- */
+/* MASTER 1 | FLEX CONTAINER ----------------------------------------------------- */
+/* -------------------------------------------------- */
+
+.master-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 10%;
+}
+
+.main-container {
+  display: flex;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------- */
+/* TEXT AREA | CENTER CONTAINERS ------------------------------------------------- */
+/* -------------------------------------------------- */
+
+.main-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1px;
+  margin: 1px;
+  width: 80%;
+}
+
+textarea {
+  display: flex;
+  border-radius: 4px;
+  background-color: var(--white);
+  border: 1px solid hsla(189, 16%, 76%, 0.705);
+  box-shadow: inset 2px 2px 2px 0px #b4b3b3;
+  outline-color: var(--outline-textarea);
+  font-size: 90%;
+  height: 100%;
+}
+
+/* TIME SPECIFIC TEXT AREA COLORS */
+
+.earlier {
+  background-color: var(--earlier-textarea);
+}
+
+.current {
+  background-color: var(--current-textarea);
+}
+
+.remaining {
+  background-color: var(--remaining-textarea);
+}
+
+.current-time {
+  color: var(--current-timelabel);
+}
+
+/* -------------------------------------------------- */
+/* TIME + SAVE | SIDE CONTAINERS | TIME + SAVE ----------------------------------- */
+/* -------------------------------------------------- */
+
+.main-side-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1px;
+  margin: 10px;
+  width: 20%;
+}
+
+/* --------------- TIME -------------- */
+
+label {
+  font-size: 120%;
+  white-space: nowrap;
+  text-align: right;
+  color: #969494;
+}
+
+/* --------------- SAVE -------------- */
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---------- SAVE ICON -------------- */
+
+.icon-big {
+  font-size: 240%;
+  display: block;
+  color: var(--icon-current);
+}
+
+.icon-big:active {
+  color: var(--icon-active);
+  transform: scale(1.2);
+  transition: 0.15s transform;
+}
+
+.icon-big:hover {
+  color: var(--icon-active);
+  transition: 0.15s color;
+}
+
+/* -------------------------------------------------- */
+/* FOOTER ------------------------------------------------------------------------ */
+/* -------------------------------------------------- */
+
+footer {
+  text-align: center;
+}
+
+.quoteText {
+  font-style: italic;
+  color: var(--quote-text);
+}
+
+.quoteAuthor {
+  color: var(--quote-author);
+}
