@@ -115,4 +115,4 @@ iii. `<section>` & `<button>` - The button element was used for the saving of in
 
 # Image Of Final Assignment
 
-![alt text](./assets/img/automatic-doodle.png)
+![alt text](./assets/img/automatic-doodle-updated.png)
