@@ -18,9 +18,6 @@
 
   --icon-current: #ac66cc;
   --icon-active: #a239ea;
-
-  --quote-text: #a0937d;
-  --quote-author: #9b8764;
 }
 
 /* -------------------------------------------------- */
@@ -107,19 +104,19 @@ textarea {
 
 /* TIME SPECIFIC TEXT AREA COLORS */
 
-.earlier {
+.past {
   background-color: var(--earlier-textarea);
 }
 
-.current {
+.present {
   background-color: var(--current-textarea);
 }
 
-.remaining {
+.future {
   background-color: var(--remaining-textarea);
 }
 
-.current-time {
+.present-time {
   color: var(--current-timelabel);
 }
 
@@ -171,21 +168,4 @@ button {
 .icon-big:hover {
   color: var(--icon-active);
   transition: 0.15s color;
-}
-
-/* -------------------------------------------------- */
-/* FOOTER ------------------------------------------------------------------------ */
-/* -------------------------------------------------- */
-
-footer {
-  text-align: center;
-}
-
-.quoteText {
-  font-style: italic;
-  color: var(--quote-text);
-}
-
-.quoteAuthor {
-  color: var(--quote-author);
 }
