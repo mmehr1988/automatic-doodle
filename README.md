@@ -27,12 +27,17 @@ The requirements for completing the App assignment were the following.
 1. Use a date utility library to work with date and time [Moment.js].
 
 2. When you open the Work Day Scheduler:
+
    a. Current day is displayed at the top of the calendar
+
    b. Timeblocks are color coordinated based on past, present, or future.
 
 3. Main Functionality
+
    a. User has the ability to enter an event in each time block
+
    b. User has the ability to save each event
+
    c. When user refreshes page, the saved events are not lost.
 
 ## Process of Writing Code
