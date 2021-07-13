@@ -25,23 +25,7 @@ headerDate.innerHTML = dateToday;
 // LOOP TO CHANGE TEXT AREA BACKGROUND COLOR ACCORDING TO TIME OF DAY
 // ----------------------------------------------------------------------
 
-// Method #1: for Loop ----------------------------
-
-// for (let i = 0; i < workDayHours; i++) {
-//   if (i + workDayHours === timeCurrent) {
-//     textArea[i].classList.add('present');
-//     timeLabel[i].classList.add('present-time');
-//   } else if (i + workDayHours < timeCurrent) {
-//     textArea[i].classList.add('past');
-//   } else {
-//     textArea[i].classList.add('future');
-//   }
-// }
-
-// Method #2: forEach Loop ----------------------------
-
-// the '_' in the function is a throwaway variable
-textArea.forEach(function (_, i, r) {
+for (let i = 0; i < workDayHours; i++) {
   if (i + workDayHours === timeCurrent) {
     textArea[i].classList.add('present');
     timeLabel[i].classList.add('present-time');
@@ -50,13 +34,11 @@ textArea.forEach(function (_, i, r) {
   } else {
     textArea[i].classList.add('future');
   }
-});
+}
 
 // ----------------------------------------------------------------------
 // LOOP TO SAVE TO LOCAL STORAGE
 // ----------------------------------------------------------------------
-
-// Method #1: for Loop ----------------------------
 
 for (let i = 0; i < workDayHours; i++) {
   btnSave[i].addEventListener('click', () => {
@@ -64,20 +46,9 @@ for (let i = 0; i < workDayHours; i++) {
   });
 }
 
-// Method #2: forEach Loop ----------------------------
-
-// the '_' in the function is a throwaway variable
-// btnSave.forEach(function (_, i, r) {
-//   btnSave[i].addEventListener('click', () => {
-//     localStorage.setItem(String(`${i}`), JSON.stringify(textArea[i].value));
-//   });
-// });
-
 // ----------------------------------------------------------------------
 // LOOP TO LOAD FROM LOCAL STORAGE
 // ----------------------------------------------------------------------
-
-// Method #1: for Loop ----------------------------
 
 for (let i = 0; i < workDayHours; i++) {
   // JSON.parse so that quotations arent retrieved when empty
@@ -87,9 +58,3 @@ for (let i = 0; i < workDayHours; i++) {
     textArea[i].append(retrieveNotes);
   }
 }
-
-// Method #2: forEach Loop ----------------------------
-
-// Object.keys(localStorage).forEach(function (savedNotes, i, r) {
-//   textArea[i].append(JSON.parse(localStorage.getItem(savedNotes)));
-// });
