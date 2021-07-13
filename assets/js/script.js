@@ -25,7 +25,22 @@ headerDate.innerHTML = dateToday;
 // LOOP TO CHANGE TEXT AREA BACKGROUND COLOR ACCORDING TO TIME OF DAY
 // ----------------------------------------------------------------------
 
-for (let i = 0; i < workDayHours; i++) {
+// Method #1: for Loop ----------------------------
+
+// for (let i = 0; i < workDayHours; i++) {
+//   if (i + workDayHours === timeCurrent) {
+//     textArea[i].classList.add('present');
+//     timeLabel[i].classList.add('present-time');
+//   } else if (i + workDayHours < timeCurrent) {
+//     textArea[i].classList.add('past');
+//   } else {
+//     textArea[i].classList.add('future');
+//   }
+// }
+
+// Method #2: forEach Loop ----------------------------
+
+textArea.forEach(function (textBox, i, r) {
   if (i + workDayHours === timeCurrent) {
     textArea[i].classList.add('present');
     timeLabel[i].classList.add('present-time');
@@ -34,27 +49,45 @@ for (let i = 0; i < workDayHours; i++) {
   } else {
     textArea[i].classList.add('future');
   }
-}
+});
 
 // ----------------------------------------------------------------------
 // LOOP TO SAVE TO LOCAL STORAGE
 // ----------------------------------------------------------------------
 
-for (let i = 0; i < workDayHours; i++) {
+// Method #1: for Loop ----------------------------
+
+// for (let i = 0; i < workDayHours; i++) {
+//   btnSave[i].addEventListener('click', () => {
+//     localStorage.setItem(String(`${i + workDayHours}`), JSON.stringify(textArea[i].value));
+//   });
+// }
+
+// Method #2: forEach Loop ----------------------------
+
+btnSave.forEach(function (btnClick, i, r) {
   btnSave[i].addEventListener('click', () => {
-    localStorage.setItem(String(`${i + workDayHours}`), JSON.stringify(textArea[i].value));
+    localStorage.setItem(String(`${i}`), JSON.stringify(textArea[i].value));
   });
-}
+});
 
 // ----------------------------------------------------------------------
 // LOOP TO LOAD FROM LOCAL STORAGE
 // ----------------------------------------------------------------------
 
-for (let i = 0; i < workDayHours; i++) {
-  // JSON.parse so that quotations arent retrieved when empty
-  var retrieveNotes = JSON.parse(localStorage.getItem(String(`${i + workDayHours}`)));
+// Method #1: for Loop ----------------------------
 
-  if (localStorage.getItem(String(`${i + workDayHours}`))) {
-    textArea[i].append(retrieveNotes);
-  }
-}
+// for (let i = 0; i < workDayHours; i++) {
+//   // JSON.parse so that quotations arent retrieved when empty
+//   var retrieveNotes = JSON.parse(localStorage.getItem(String(`${i + workDayHours}`)));
+
+//   if (localStorage.getItem(String(`${i + workDayHours}`))) {
+//     textArea[i].append(retrieveNotes);
+//   }
+// }
+
+// Method #2: forEach Loop ----------------------------
+
+Object.keys(localStorage).forEach(function (savedNotes, i, r) {
+  textArea[i].append(JSON.parse(localStorage.getItem(savedNotes)));
+});
