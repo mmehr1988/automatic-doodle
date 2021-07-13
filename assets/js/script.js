@@ -58,20 +58,20 @@ textArea.forEach(function (_, i, r) {
 
 // Method #1: for Loop ----------------------------
 
-// for (let i = 0; i < workDayHours; i++) {
-//   btnSave[i].addEventListener('click', () => {
-//     localStorage.setItem(String(`${i + workDayHours}`), JSON.stringify(textArea[i].value));
-//   });
-// }
+for (let i = 0; i < workDayHours; i++) {
+  btnSave[i].addEventListener('click', () => {
+    localStorage.setItem(String(`${i + workDayHours}`), JSON.stringify(textArea[i].value));
+  });
+}
 
 // Method #2: forEach Loop ----------------------------
 
 // the '_' in the function is a throwaway variable
-btnSave.forEach(function (_, i, r) {
-  btnSave[i].addEventListener('click', () => {
-    localStorage.setItem(String(`${i}`), JSON.stringify(textArea[i].value));
-  });
-});
+// btnSave.forEach(function (_, i, r) {
+//   btnSave[i].addEventListener('click', () => {
+//     localStorage.setItem(String(`${i}`), JSON.stringify(textArea[i].value));
+//   });
+// });
 
 // ----------------------------------------------------------------------
 // LOOP TO LOAD FROM LOCAL STORAGE
@@ -79,17 +79,17 @@ btnSave.forEach(function (_, i, r) {
 
 // Method #1: for Loop ----------------------------
 
-// for (let i = 0; i < workDayHours; i++) {
-//   // JSON.parse so that quotations arent retrieved when empty
-//   var retrieveNotes = JSON.parse(localStorage.getItem(String(`${i + workDayHours}`)));
+for (let i = 0; i < workDayHours; i++) {
+  // JSON.parse so that quotations arent retrieved when empty
+  var retrieveNotes = JSON.parse(localStorage.getItem(String(`${i + workDayHours}`)));
 
-//   if (localStorage.getItem(String(`${i + workDayHours}`))) {
-//     textArea[i].append(retrieveNotes);
-//   }
-// }
+  if (localStorage.getItem(String(`${i + workDayHours}`))) {
+    textArea[i].append(retrieveNotes);
+  }
+}
 
 // Method #2: forEach Loop ----------------------------
 
-Object.keys(localStorage).forEach(function (savedNotes, i, r) {
-  textArea[i].append(JSON.parse(localStorage.getItem(savedNotes)));
-});
+// Object.keys(localStorage).forEach(function (savedNotes, i, r) {
+//   textArea[i].append(JSON.parse(localStorage.getItem(savedNotes)));
+// });
