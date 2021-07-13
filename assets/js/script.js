@@ -40,7 +40,8 @@ headerDate.innerHTML = dateToday;
 
 // Method #2: forEach Loop ----------------------------
 
-textArea.forEach(function (textBox, i, r) {
+// the '_' in the function is a throwaway variable
+textArea.forEach(function (_, i, r) {
   if (i + workDayHours === timeCurrent) {
     textArea[i].classList.add('present');
     timeLabel[i].classList.add('present-time');
@@ -65,7 +66,8 @@ textArea.forEach(function (textBox, i, r) {
 
 // Method #2: forEach Loop ----------------------------
 
-btnSave.forEach(function (btnClick, i, r) {
+// the '_' in the function is a throwaway variable
+btnSave.forEach(function (_, i, r) {
   btnSave[i].addEventListener('click', () => {
     localStorage.setItem(String(`${i}`), JSON.stringify(textArea[i].value));
   });
