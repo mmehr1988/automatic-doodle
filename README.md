@@ -4,6 +4,8 @@ Assignment: Work Day Scheduler
 
 Developer: Mehdi Mehrabani
 
+App Link: [Work Day Scheduler](https://mmehr1988.github.io/automatic-doodle/)
+
 For this week, we were tasked with building a Work Day Scheduler that allows a user to save personal notes for each hour of the day. The main purpose of this assignment was to become familiar with third-party API’s and more specifically the Moment.js library.
 
 Since the emphasis of this assignments was to learn a date and time library, the first thing I decided to do before attempting to write the code was to research why dates and times are so crucial for coding purposes.
