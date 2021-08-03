@@ -120,6 +120,6 @@ iii. `<section>` & `<button>` - The button element was used for the saving of in
 
 - As done with the save to local storage for loop, I implemented the same for loading saved notes from local storage upon user refreshing the page.
 
-# Image Of Final Assignment
+# GIF Of Final Assignment
 
-![alt text](./assets/img/automatic-doodle-updated.png)
+![alt text](./assets/gif/Work-Day-Scheduler.gif)
